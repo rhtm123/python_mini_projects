@@ -1,4 +1,5 @@
 
+import tkinter.messagebox as msgbox
 import random
 from tkinter import *
 window = Tk()
@@ -39,10 +40,10 @@ original = gererate_random_number()
 l1 = Label(window, text="Welcome to BullsCow Game")
 l1.config(font=("Calibri", 18))
 
-l1.pack(pady=10)
+l1.pack(pady=30)
 
 
-l2 = Label(window, text="Enter your guess : ")
+l2 = Label(window, text="Enter your guess (4 digits): ")
 l2.pack()
 
 f1 = Frame(window,)
@@ -54,37 +55,21 @@ count = 0
 def check():
     global count
     count += 1
-    guess = entry_text1.get() + entry_text2.get() + \
-        entry_text3.get() + entry_text4.get()
+    guess = entry_text1.get()
     bull_n = bull(original, guess)
     cow_n = cow(original, guess)
     entry_text1.set("")
-    entry_text2.set("")
-    entry_text3.set("")
-    entry_text4.set("")
 
     Label(f2, text="Guess={}, Cow={}, Bull={}".format(
         guess, cow_n, bull_n)).pack()
-    # if guess == original:
+    if guess == original:
+        msgbox.showinfo("Congrats", "You have guessed it")
 
 
 entry_text1 = StringVar()
 
-e1 = Entry(f1, text=entry_text1, font=("Calibri", 14), width=1)
-e1.grid(row=0, column=0, ipadx=4, ipady=4, padx=4)
-
-entry_text2 = StringVar()
-e2 = Entry(f1, text=entry_text2,  font=(
-    "Calibri", 14), width=1, justify=CENTER)
-e2.grid(row=0, column=1, ipadx=4, ipady=4, padx=4)
-
-entry_text3 = StringVar()
-e3 = Entry(f1, text=entry_text3,  font=("Calibri", 14), width=1)
-e3.grid(row=0, column=2, ipadx=4, ipady=4, padx=4)
-
-entry_text4 = StringVar()
-e4 = Entry(f1, text=entry_text4,  font=("Calibri", 14), width=1)
-e4.grid(row=0, column=3, ipadx=4, ipady=4, padx=4)
+e1 = Entry(f1, text=entry_text1, font=("Calibri", 18), width=4)
+e1.grid(row=0, column=0, ipadx=0, ipady=3, padx=4)
 
 
 b1 = Button(f1, text="Check", font=("Calibri", 14), command=check)

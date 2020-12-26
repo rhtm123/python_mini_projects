@@ -24,13 +24,13 @@ input_text = tk.IntVar()
 def create_hint_label(hint):
     if hint == 'less':
         tk.Label(
-            text="Count= {} Your guess-{}, Hint- Guess is less".format(count, input_text.get())).pack()
+            text="Count-> {} Your guess-{}, Hint: Guess is less".format(count, input_text.get()), fg="red").pack(pady=4)
     elif hint == "greater":
         tk.Label(
-            text="Count= {} Your guess-{}, Hint- Guess is greater".format(count, input_text.get())).pack()
+            text="Count-> {} Your guess-{}, Hint: Guess is greater".format(count, input_text.get()), fg="red").pack(pady=4)
     else:
         tk.Label(
-            text="Count= {} Your guress-{} You correctly guessed the number.".format(count, random_number)).pack()
+            text="Count-> {} Your guress-{}, You correctly guessed the number.".format(count, random_number), fg="green").pack(pady=4)
 
 
 def check_input():
@@ -51,23 +51,28 @@ def check_input():
     # pack is used to show the object in the window
 label1 = tk.Label(
     window, text="Welcome to The learning Setu. ")
-label1.pack()
+
+label1.config(font=("Helvetica", 14))
+
+label1.pack(pady=20)
 
 label2 = tk.Label(
     window, text="Guess the number (number is between 1 and 100) : ")
-label2.pack()
+
+label2.config(font=("Helvetica", 12))
+
+label2.pack(pady=2)
 
 # frame = tk.Frame(window)
 
 
 # first input-field is placed on position 01 (row - 0 and column - 1)
-user_input = tk.Entry(window, textvariable=input_text,)
-
-user_input.pack()
+user_input = tk.Entry(window, textvariable=input_text, width=2)
+user_input.config(font=("Helvetica", 10))
+user_input.pack(pady=10, ipady=4, ipadx=2)
 
 submit_btn = tk.Button(window, text="Submit", command=check_input)
-
+submit_btn.config(font=("Helvetica", 10))
 submit_btn.pack()
-
 
 window.mainloop()

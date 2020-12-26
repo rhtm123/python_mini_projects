@@ -2,6 +2,10 @@ import random
 from tkinter import *
 import tkinter.messagebox as msgbox
 
+import os
+dir = os.path.dirname(__file__)
+
+
 window = Tk()
 window.title("Rock Paper Scissor")
 window.geometry("400x400")
@@ -25,17 +29,17 @@ def check(selected_img):
             "Loser", "You loss the game. You selcted {}, computer selected {}".format(selected_img, computer_choice))
 
 
-image_rock = PhotoImage(file="rock.png")
+image_rock = PhotoImage(file=os.path.join(dir, 'rock_modi.png'))
 
 label1 = Button(frame1, image=image_rock, command=lambda: check('rock'))
 label1.grid(row=0, column=0, padx=10, pady=10)
 
-image_paper = PhotoImage(file="paper.png")
+image_paper = PhotoImage(file=os.path.join(dir, 'paper_modi.png'))
 
 label2 = Button(frame1, image=image_paper, command=lambda: check('paper'))
 label2.grid(row=0, column=1, padx=10, pady=10)
 
-image_scissor = PhotoImage(file="scissor.png")
+image_scissor = PhotoImage(file=os.path.join(dir, 'scissor_modi.png'))
 
 label3 = Button(frame1, image=image_scissor, command=lambda: check('scissor'))
 label3.grid(row=0, column=2, padx=10, pady=10)
