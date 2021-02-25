@@ -12,6 +12,8 @@ random_number = randint(1, 100)
 
 window = tk.Tk()
 # to rename the title of the window
+window.wm_iconbitmap('The-Learning-Setu-Logo.ico')
+
 window.title("Guess The Number")
 window.geometry("400x400")
 

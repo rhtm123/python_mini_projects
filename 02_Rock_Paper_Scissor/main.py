@@ -8,6 +8,8 @@ dir = os.path.dirname(__file__)
 
 window = Tk()
 window.title("Rock Paper Scissor")
+window.wm_iconbitmap('The-Learning-Setu-Logo.ico')
+
 window.geometry("400x400")
 frame1 = Frame(window)
 frame1.pack(padx=10, pady=60)
@@ -33,15 +35,21 @@ image_rock = PhotoImage(file=os.path.join(dir, 'rock_modi.png'))
 
 label1 = Button(frame1, image=image_rock, command=lambda: check('rock'))
 label1.grid(row=0, column=0, padx=10, pady=10)
+Label(frame1, text="Rock").grid(row=1, column=0)
+
 
 image_paper = PhotoImage(file=os.path.join(dir, 'paper_modi.png'))
 
 label2 = Button(frame1, image=image_paper, command=lambda: check('paper'))
 label2.grid(row=0, column=1, padx=10, pady=10)
+Label(frame1, text="Paper").grid(row=1, column=1)
+
 
 image_scissor = PhotoImage(file=os.path.join(dir, 'scissor_modi.png'))
 
 label3 = Button(frame1, image=image_scissor, command=lambda: check('scissor'))
 label3.grid(row=0, column=2, padx=10, pady=10)
+Label(frame1, text="Scissor").grid(row=1, column=2)
+
 
 window.mainloop()

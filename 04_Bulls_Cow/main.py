@@ -5,6 +5,7 @@ from tkinter import *
 window = Tk()
 
 window.title("BULLS COW GAME")
+window.wm_iconbitmap('The-Learning-Setu-Logo.ico')
 window.geometry("400x400")
 
 

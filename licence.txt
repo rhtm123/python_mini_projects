@@ -1,0 +1,2 @@
+This application is free to use. The application is made for learning purpose.
+You can find the code here - https://github.com/rhtm123/python_mini_projects

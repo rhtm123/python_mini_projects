@@ -10,6 +10,8 @@ class TicTacToe:
         self.window = Tk()
         self.window.title("Tic Tac Toe")
         self.window.geometry("400x400")
+        self.window.wm_iconbitmap('The-Learning-Setu-Logo.ico')
+
         self.frame = Frame(self.window)
         self.frame.pack(padx=20, pady=50)
         self.a = {i: StringVar() for i in range(9)}

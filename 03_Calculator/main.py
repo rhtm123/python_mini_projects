@@ -30,6 +30,7 @@ def btn_equal():
 if __name__ == '__main__':
     window = Tk()
     window.geometry("312x320")
+    window.wm_iconbitmap('The-Learning-Setu-Logo.ico')
 
     # in order to prevent resize
     window.resizable(0, 0)
