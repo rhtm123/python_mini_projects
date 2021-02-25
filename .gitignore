@@ -12,6 +12,9 @@ penv
 ## big projects
 06_Url_Shortner
 
+## main
+.main/
+main/
 
 # Distribution / packaging
 .Python
